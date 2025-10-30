@@ -3,6 +3,11 @@
 @import "FOOTER.css";
 @import "main.css";
 
+:root {
+  --button-primary: rgb(254, 111, 15);
+  --button-hover: rgba(254, 111, 15, 0.8);
+}
+
 .items-list {
   display: flex;
   justify-content: center;
@@ -51,7 +56,7 @@ main {
   font-weight: bold;
 }
 .write-btn {
-  background-color: #fe6f0f;
+  background-color: var(--button-primary);
   color: white;
   padding: 10px 15px 10px 15px;
   font-size: 15px;
@@ -60,10 +65,14 @@ main {
   bottom: 100px;
   right: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  cursor: pointer;
+}
+.write-btn:hover {
+  background-color: var(--button-hover);
 }
 
 .media-info-msg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -71,12 +80,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
   background-color: tomato;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 500px) {
   .media-info-msg {
-    opacity: 0;
+    display: none;
   }
 }
