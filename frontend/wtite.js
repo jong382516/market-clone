@@ -7,7 +7,7 @@ const handleSubmitForm = async (event) => {
   try {
     const res = await fetch("/items", {
       method: "POST",
-      body,
+      body : formData
     });
     const data = await res.json();
     if (data === "200") window.location.pathname = "/";
@@ -16,4 +16,4 @@ const handleSubmitForm = async (event) => {
   }
 };
 
-form.addEventListener("submit", handleSubmitForm)
+form.addEventListener("submit", handleSubmitForm);
